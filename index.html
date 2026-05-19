@@ -269,10 +269,10 @@
   }
   .hero-top {
     flex: 1;
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex; flex-direction: column;
     justify-content: flex-end;
-    padding: 80px 52px 80px;
+    padding: 120px 80px 110px;
     position: relative; z-index: 2;
     background: var(--dark);
   }
@@ -856,7 +856,7 @@
 
     /* ---- HERO ---- */
     .hero { padding-top: 68px; min-height: 100svh; }
-    .hero-top { padding: 44px 24px 36px; }
+    .hero-top { padding: 60px 28px 72px; }
     .hero-tag { font-size: 9px; letter-spacing: 4px; margin-bottom: 20px; }
     .hero-title {
       font-size: clamp(42px, 12vw, 68px);
@@ -1027,30 +1027,43 @@
 
   /* ===== CLIENTI ===== */
   .clienti-section {
-    padding: 80px 52px;
+    padding: 64px 0;
     background: var(--offwhite);
+    overflow: hidden;
   }
   .clienti-header {
     text-align: center;
-    margin-bottom: 52px;
+    margin-bottom: 44px;
   }
   .clienti-tag {
     font-family: Aptos, 'Segoe UI', sans-serif;
     font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
     color: rgba(78,69,71,0.4); font-weight: 600;
   }
-  .clienti-grid {
-    display: flex; flex-wrap: wrap;
-    align-items: center; justify-content: center;
-    gap: 48px 72px;
+  .clienti-track-wrap { overflow: hidden; position: relative; }
+  .clienti-track-wrap::before,
+  .clienti-track-wrap::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
+  }
+  .clienti-track-wrap::before { left: 0; background: linear-gradient(to right, var(--offwhite), transparent); }
+  .clienti-track-wrap::after  { right: 0; background: linear-gradient(to left, var(--offwhite), transparent); }
+  .clienti-track {
+    display: flex; align-items: center; gap: 72px;
+    animation: logoScroll 32s linear infinite;
+    white-space: nowrap; width: max-content;
+  }
+  .clienti-track:hover { animation-play-state: paused; }
+  @keyframes logoScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
   }
   .clienti-logo-img {
-    height: 36px; width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) opacity(0.35);
+    height: 40px; width: auto;
+    object-fit: contain; flex-shrink: 0;
+    filter: opacity(0.55);
     transition: filter 0.3s ease;
   }
-  .clienti-logo-img:hover { filter: grayscale(0%) opacity(1); }
+  .clienti-logo-img:hover { filter: opacity(1); }
 
   @media (max-width: 768px) {
     .metodo-teaser { grid-template-columns: 1fr; gap: 44px; padding: 72px 24px; }
@@ -1262,17 +1275,38 @@
   <div class="clienti-header reveal">
     <p class="clienti-tag clip-left">I nostri clienti</p>
   </div>
-  <div class="clienti-grid reveal">
-    <img class="clienti-logo-img" src="img/loghi/Jekko.png" alt="Jekko">
-    <img class="clienti-logo-img" src="img/loghi/Nutkao.png" alt="Nutkao">
-    <img class="clienti-logo-img" src="img/loghi/Cotril.png" alt="Cotril">
-    <img class="clienti-logo-img" src="img/loghi/Garmont.png" alt="Garmont">
-    <img class="clienti-logo-img" src="img/loghi/Tecnica Group.png" alt="Tecnica Group">
-    <img class="clienti-logo-img" src="img/loghi/Sidi.png" alt="Sidi">
-    <img class="clienti-logo-img" src="img/loghi/Berkel.png" alt="Berkel">
-    <img class="clienti-logo-img" src="img/loghi/Replay.png" alt="Replay">
-    <img class="clienti-logo-img" src="img/loghi/Villa Sandi.png" alt="Villa Sandi">
-    <img class="clienti-logo-img" src="img/loghi/Nokian Tyres.png" alt="Nokian Tyres">
+  <div class="clienti-track-wrap">
+    <div class="clienti-track">
+      <img class="clienti-logo-img" src="img/loghi/Jekko.png" alt="Jekko">
+      <img class="clienti-logo-img" src="img/loghi/Nutkao.png" alt="Nutkao">
+      <img class="clienti-logo-img" src="img/loghi/Cotril.png" alt="Cotril">
+      <img class="clienti-logo-img" src="img/loghi/Garmont.png" alt="Garmont">
+      <img class="clienti-logo-img" src="img/loghi/Tecnica Group.png" alt="Tecnica Group">
+      <img class="clienti-logo-img" src="img/loghi/Sidi.png" alt="Sidi">
+      <img class="clienti-logo-img" src="img/loghi/Berkel.png" alt="Berkel">
+      <img class="clienti-logo-img" src="img/loghi/Replay.png" alt="Replay">
+      <img class="clienti-logo-img" src="img/loghi/Villa Sandi.png" alt="Villa Sandi">
+      <img class="clienti-logo-img" src="img/loghi/Nokian Tyres.png" alt="Nokian Tyres">
+      <img class="clienti-logo-img" src="img/loghi/Hausbrandt.png" alt="Hausbrandt">
+      <img class="clienti-logo-img" src="img/loghi/Levoni.png" alt="Levoni">
+      <img class="clienti-logo-img" src="img/loghi/Crispi.png" alt="Crispi">
+      <img class="clienti-logo-img" src="img/loghi/Florian.png" alt="Florian">
+      <!-- duplicati per loop seamless -->
+      <img class="clienti-logo-img" src="img/loghi/Jekko.png" alt="Jekko">
+      <img class="clienti-logo-img" src="img/loghi/Nutkao.png" alt="Nutkao">
+      <img class="clienti-logo-img" src="img/loghi/Cotril.png" alt="Cotril">
+      <img class="clienti-logo-img" src="img/loghi/Garmont.png" alt="Garmont">
+      <img class="clienti-logo-img" src="img/loghi/Tecnica Group.png" alt="Tecnica Group">
+      <img class="clienti-logo-img" src="img/loghi/Sidi.png" alt="Sidi">
+      <img class="clienti-logo-img" src="img/loghi/Berkel.png" alt="Berkel">
+      <img class="clienti-logo-img" src="img/loghi/Replay.png" alt="Replay">
+      <img class="clienti-logo-img" src="img/loghi/Villa Sandi.png" alt="Villa Sandi">
+      <img class="clienti-logo-img" src="img/loghi/Nokian Tyres.png" alt="Nokian Tyres">
+      <img class="clienti-logo-img" src="img/loghi/Hausbrandt.png" alt="Hausbrandt">
+      <img class="clienti-logo-img" src="img/loghi/Levoni.png" alt="Levoni">
+      <img class="clienti-logo-img" src="img/loghi/Crispi.png" alt="Crispi">
+      <img class="clienti-logo-img" src="img/loghi/Florian.png" alt="Florian">
+    </div>
   </div>
 </section>
 
