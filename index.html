@@ -306,7 +306,7 @@
   .hero-bottom {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    min-height: 340px;
+    min-height: 500px;
   }
   .hero-block {
     position: relative; overflow: hidden;
@@ -318,40 +318,41 @@
   .hero-block-2 { transition-delay: 0.22s !important; }
   .hero-block-3 { transition-delay: 0.34s !important; }
 
-  .block-inner {
-    width: 100%; height: 100%; min-height: 340px;
-    display: flex; align-items: center; justify-content: center;
+  .block-img-content {
+    position: absolute; inset: 0;
+    transition: transform 0.7s cubic-bezier(0.23,1,0.32,1);
   }
-  .block-stand { background: linear-gradient(135deg, #4e4547 0%, #2a2527 100%); }
-  .block-event { background: linear-gradient(135deg, #3a3336 0%, #4e4547 100%); }
-  .block-red { background: var(--red); flex-direction: column; justify-content: flex-end; padding: 44px; }
+  .hero-block:hover .block-img-content { transform: scale(1.04); }
 
-  .hero-img-label {
-    position: absolute; bottom: 24px; left: 24px;
+  .block-content-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 44px 40px;
+  }
+  .block-exp-num {
     font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-    color: rgba(255,255,255,0.55); font-weight: 600;
+    color: rgba(255,255,255,0.45); font-family: Aptos, 'Segoe UI', sans-serif;
+    font-weight: 600; margin-bottom: 10px;
+  }
+  .block-exp-title {
+    font-size: 30px; font-weight: 600; color: var(--white);
     font-family: Aptos, 'Segoe UI', sans-serif;
+    line-height: 1.05; letter-spacing: -0.5px; margin-bottom: 14px;
   }
-  .block-red p {
-    font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.82);
-    margin-bottom: 32px;
+  .block-exp-text {
+    font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.68);
+    margin-bottom: 24px;
   }
-  .block-red a {
+  .block-exp-cta {
     font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
     color: var(--white); text-decoration: none; font-weight: 600;
     font-family: Aptos, 'Segoe UI', sans-serif;
     display: inline-flex; align-items: center; gap: 10px;
-    transition: gap 0.3s;
+    transition: gap 0.3s, color 0.25s;
   }
-  .block-red a:hover { gap: 18px; }
-  .block-red a::after { content: '→'; font-size: 16px; }
-
-  .block-img-content {
-    width: 100%; height: 100%; min-height: 340px;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.7s cubic-bezier(0.23,1,0.32,1);
-  }
-  .hero-block:hover .block-img-content { transform: scale(1.04); }
+  .block-exp-cta::after { content: '→'; font-size: 14px; }
+  .block-exp-cta:hover { gap: 16px; color: var(--red); }
 
   /* ===================== MARQUEE ===================== */
   .marquee-wrap {
@@ -1214,18 +1215,31 @@
 
 <!-- 3 BLOCCHI IMMAGINI -->
 <div class="hero-bottom">
-  <div class="hero-block hero-block-1 block-stand" id="hb1">
-    <div class="block-inner block-img-content" style="background: url('img/hero_stand.jpg') center/cover no-repeat;"></div>
-    <div class="hero-img-label">Stand Fieristici</div>
+  <div class="hero-block hero-block-1" id="hb1">
+    <div class="block-img-content" style="background: url('img/hero_stand.jpg') center/cover no-repeat;"></div>
+    <div class="block-content-overlay">
+      <div class="block-exp-num">01</div>
+      <h3 class="block-exp-title">Stand</h3>
+      <p class="block-exp-text">Creatività, tecnologia e produzione per costruire stand che raccontano storie e si connettono con le persone.</p>
+      <a href="#" class="block-exp-cta">Scopri Stand</a>
+    </div>
   </div>
   <div class="hero-block hero-block-2" id="hb2">
-    <div class="block-inner block-img-content" style="background: url('img/event_orientexpress.jpg') center/cover no-repeat;"></div>
-    <div class="hero-img-label">Event Design</div>
+    <div class="block-img-content" style="background: url('img/event_orientexpress.jpg') center/cover no-repeat;"></div>
+    <div class="block-content-overlay">
+      <div class="block-exp-num">02</div>
+      <h3 class="block-exp-title">Event</h3>
+      <p class="block-exp-text">Dall'ideazione all'esecuzione, ogni evento diventa un'esperienza unica e crea un'emozione nello spazio.</p>
+      <a href="#" class="block-exp-cta">Scopri Event</a>
+    </div>
   </div>
-  <div class="hero-block hero-block-3 block-red" id="hb3">
-    <div class="block-inner" style="flex-direction:column;justify-content:flex-end;padding:44px;align-items:flex-start;">
-      <p>Progettiamo e costruiamo spazi di connessione. Stand fieristici, eventi e retail che parlano il linguaggio del tuo brand.</p>
-      <a href="#about">Scopri chi siamo</a>
+  <div class="hero-block hero-block-3" id="hb3">
+    <div class="block-img-content" style="background: url('img/portfolio_retail.jpg') center/cover no-repeat;"></div>
+    <div class="block-content-overlay">
+      <div class="block-exp-num">03</div>
+      <h3 class="block-exp-title">Contract<br>&amp; Retail</h3>
+      <p class="block-exp-text">Spazi commerciali e retail progettati per connettere brand e consumatore in ambienti che lasciano il segno.</p>
+      <a href="#" class="block-exp-cta">Scopri Contract &amp; Retail</a>
     </div>
   </div>
 </div>
@@ -1247,15 +1261,6 @@
     <div class="marquee-item">Digital Marketing <span class="dot"></span></div>
   </div>
 </div>
-
-<!-- EXPERTIZE -->
-<section class="expertize" id="expertize">
-  <div class="expertize-grid">
-    <div class="exp-card stagger-item" style="transition-delay: 0s;"><div class="exp-num clip-left">01 — Stand</div><h3 class="exp-title">Stand</h3><p class="exp-text fade-up">Creatività, tecnologia e produzione per costruire stand che raccontano storie e si connettono con le persone.</p><a href="#" class="exp-arrow">Scopri Stand</a></div>
-    <div class="exp-card stagger-item" style="transition-delay: 0.12s;"><div class="exp-num clip-left">02 — Event</div><h3 class="exp-title">Event</h3><p class="exp-text fade-up">Dall'ideazione all'esecuzione, ogni evento diventa un'esperienza unica e crea un'emozione nello spazio.</p><a href="#" class="exp-arrow">Scopri Event</a></div>
-    <div class="exp-card stagger-item" style="transition-delay: 0.24s;"><div class="exp-num clip-left">03 — Retail</div><h3 class="exp-title">Contract<br>&amp; Retail</h3><p class="exp-text fade-up">Spazi commerciali e retail progettati per connettere brand e consumatore in ambienti che lasciano il segno.</p><a href="#" class="exp-arrow">Scopri Contract &amp; Retail</a></div>
-  </div>
-</section>
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
