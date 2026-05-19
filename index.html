@@ -269,9 +269,10 @@
   }
   .hero-top {
     flex: 1;
+    min-height: 80vh;
     display: flex; flex-direction: column;
-    justify-content: center;
-    padding: 80px 52px 60px;
+    justify-content: flex-end;
+    padding: 80px 52px 80px;
     position: relative; z-index: 2;
     background: var(--dark);
   }
@@ -983,14 +984,14 @@
     font-family: Aptos, 'Segoe UI', sans-serif;
     font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
     color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600;
-    transition: color 0.25s, gap 0.3s;
-    position: relative; z-index: 2;
+    position: relative; z-index: 3;
     opacity: 0; transform: translateY(12px);
-    transition: opacity 0.7s ease, transform 0.7s ease, color 0.25s, gap 0.3s;
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .hero-cta.in { opacity: 1; transform: translateY(0); }
   .hero-cta:hover { color: var(--white); gap: 20px; }
-  .hero-cta span { font-size: 16px; }
+  .hero-cta span { font-size: 16px; transition: transform 0.3s; }
+  .hero-cta:hover span { transform: translateX(6px); }
 
   /* ===== METODO TEASER ===== */
   .metodo-teaser {
@@ -1151,7 +1152,7 @@
       <span class="line"><span class="word-wrap"><span class="word-inner red" id="w2" style="transform: translateY(110%);">connessione.</span></span></span>
     </h1>
     <div class="hero-rule" id="heroRule"></div>
-    <a href="#about" class="hero-cta" id="heroCta">Scopri come lavoriamo <span>→</span></a>
+    <a href="#metodo" class="hero-cta" id="heroCta">Scopri come lavoriamo <span>→</span></a>
   </div>
   <div class="hero-bottom">
     <div class="hero-block hero-block-1 block-stand" id="hb1">
@@ -1159,7 +1160,7 @@
       <div class="hero-img-label">Stand Fieristici</div>
     </div>
     <div class="hero-block hero-block-2" id="hb2">
-      <div class="block-inner block-img-content" style="background: url('img/hero_event.jpg') center/cover no-repeat;"></div>
+      <div class="block-inner block-img-content" style="background: url('img/hero_coffeefest.jpg') center/cover no-repeat;"></div>
       <div class="hero-img-label">Event Design</div>
     </div>
     <div class="hero-block hero-block-3 block-red" id="hb3">
@@ -1197,12 +1198,12 @@
     <p class="about-text fade-up">Diamo forma a spazi con l'energia giusta per supportare le aziende a entrare in contatto con le persone — curando soluzioni integrate e tailor-made per ogni esigenza.<br><br>ADM Group è una realtà indipendente che fa design degli spazi sfruttando una combinazione originale di competenze ed esperienze: un team multidisciplinare riunito attorno a valori condivisi.<br><br><em>Audacia, collaborazione, qualità d'esecuzione.</em></p>
     <a href="#" class="metodo-teaser-link" style="color:rgba(255,255,255,0.7);margin-bottom:52px;">Scopri chi siamo</a>
     <div class="about-stats">
-      <div><div class="stat-num count-up" data-target="15" data-suffix="+">0+</div><div class="stat-label">Anni</div></div>
-      <div><div class="stat-num count-up" data-target="200" data-suffix="+">0+</div><div class="stat-label">Progetti</div></div>
-      <div><div class="stat-num count-up" data-target="80" data-suffix="+">0+</div><div class="stat-label">Clienti</div></div>
+      <div><div class="stat-num">15+</div><div class="stat-label">Anni</div></div>
+      <div><div class="stat-num">200+</div><div class="stat-label">Progetti</div></div>
+      <div><div class="stat-num">80+</div><div class="stat-label">Clienti</div></div>
     </div>
   </div>
-  <div class="about-visual" style="background: url('img/about_team.jpg') center/cover no-repeat;">
+  <div class="about-visual" style="background: url('img/about_ufficio.jpg') center/cover no-repeat;">
     <div style="position:absolute;inset:0;background:rgba(40,30,35,0.55);"></div>
     <div class="about-big-text" style="position:relative;z-index:1;">ADM</div>
     <div class="about-quote" style="z-index:1;">"Creiamo architetture effimere."</div>
