@@ -93,6 +93,9 @@
     .ld-line.grow { width: 170px; }
     .ld-count-wrap { bottom: 28px; right: 24px; }
     #ldCount { font-size: 48px; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .about-stats { gap: 20px; }
+    .block-exp-text { display: none; }
   }
 
   /* ===================== HERO WORD REVEAL ===================== */
@@ -1007,13 +1010,26 @@
     .cta::before { font-size: 140px; }
     .cta-title { letter-spacing: -1.5px; margin-bottom: 40px; }
 
+    /* ---- HERO BOTTOM (3 card) ---- */
+    .hero-bottom { grid-template-columns: 1fr; }
+    .hero-block { min-height: 260px; }
+    .block-content-overlay { padding: 28px 24px; }
+    .block-exp-title { font-size: 22px; margin-bottom: 8px; }
+    .block-exp-text { font-size: 12px; margin-bottom: 16px; display: none; }
+    .block-exp-cta { font-size: 9px; }
+
+    /* ---- METODO ---- */
+    .metodo-teaser { grid-template-columns: 1fr; gap: 0; padding: 72px 24px; }
+    .metodo-red-block { padding: 44px 28px; min-height: 260px; }
+    .metodo-red-quote { font-size: clamp(24px, 7vw, 36px); }
+
     /* ---- FOOTER ---- */
     footer { padding: 52px 24px 0; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; padding-bottom: 48px; }
-    .footer-logo svg { height: 20px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; padding-bottom: 40px; }
+    .footer-logo { height: 20px !important; }
     .footer-nav { gap: 10px; }
+    .footer-legal { gap: 10px; }
     .footer-bottom { flex-direction: column; gap: 6px; text-align: center; padding: 20px 0; }
-    .footer-right { text-align: center; }
   }
 
   /* ===== HERO CTA ===== */
