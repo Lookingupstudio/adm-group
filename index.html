@@ -1580,6 +1580,17 @@ if (window.matchMedia('(pointer: fine)').matches) {
     el.addEventListener('mouseenter', () => { circle.style.width = '64px'; circle.style.height = '64px'; });
     el.addEventListener('mouseleave', () => { circle.style.width = '40px'; circle.style.height = '40px'; });
   });
+  const redBlock = document.querySelector('.metodo-red-block');
+  if (redBlock) {
+    redBlock.addEventListener('mouseenter', () => {
+      dot.style.background = '#fff';
+      circle.style.borderColor = '#fff';
+    });
+    redBlock.addEventListener('mouseleave', () => {
+      dot.style.background = '';
+      circle.style.borderColor = '';
+    });
+  }
 }
 
 // ====== SCROLL REVEAL (base) ======
