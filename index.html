@@ -1048,6 +1048,10 @@
   }
   .metodo-teaser-link:hover { gap: 20px; color: var(--red); }
   .metodo-teaser-link::after { content: '→'; font-size: 16px; }
+  .metodo-img-wrap { overflow: hidden; height: 100%; min-height: 480px; }
+  .metodo-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.8s cubic-bezier(0.23,1,0.32,1); }
+  .metodo-img-wrap:hover img { transform: scale(1.04); }
 
   /* ===== CLIENTI ===== */
   .clienti-section {
@@ -1318,10 +1322,11 @@
       <span class="sr-line"><span class="sr-inner">Il metodo</span></span>
       <span class="sr-line"><span class="sr-inner">ADM.</span></span>
     </h2>
-  </div>
-  <div class="reveal">
     <p class="metodo-teaser-body fade-up">Dal concept alla produzione in-house: un unico ecosistema operativo che controlla ogni fase del progetto. Dalla pianificazione all'esecuzione, su qualsiasi scala e in più aree geografiche.</p>
     <a href="#" class="metodo-teaser-link">Scopri come lavoriamo</a>
+  </div>
+  <div class="metodo-img-wrap reveal">
+    <img src="img/metodo_quinto.jpg" alt="ADM Group — ufficio Quinto di Treviso">
   </div>
 </section>
 
