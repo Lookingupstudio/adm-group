@@ -95,7 +95,6 @@
     #ldCount { font-size: 48px; }
     .footer-top { grid-template-columns: 1fr; gap: 32px; }
     .about-stats { gap: 20px; }
-    .block-exp-text { display: none; }
   }
 
   /* ===================== HERO WORD REVEAL ===================== */
@@ -905,24 +904,20 @@
 
     /* ---- HERO ---- */
     .hero { padding-top: 68px; min-height: 100svh; }
-    .hero-top { padding: 60px 28px 72px; }
+    .hero-video-bg { display: block; }
+    .hero-video-overlay { display: block; }
+    .hero-top {
+      background: transparent !important;
+      padding: 60px 28px 72px;
+    }
+    .hero-top .hero-title { color: var(--white) !important; }
+    .hero-top .hero-tag { color: rgba(255,255,255,0.55) !important; }
     .hero-tag { font-size: 9px; letter-spacing: 4px; margin-bottom: 20px; }
     .hero-title {
       font-size: clamp(42px, 12vw, 68px);
       letter-spacing: -1.5px;
       line-height: 0.93;
     }
-    .hero-bottom { grid-template-columns: 1fr; min-height: auto; }
-    .block-inner,
-    .block-img-content { min-height: 220px; }
-    .block-red {
-      padding: 32px 24px;
-      min-height: 240px;
-      align-items: flex-start;
-      justify-content: flex-end;
-    }
-    .block-red p { font-size: 14px; line-height: 1.7; margin-bottom: 22px; }
-    .hero-img-label { font-size: 8px; bottom: 18px; left: 18px; }
 
     /* ---- MARQUEE ---- */
     .marquee-item { padding: 0 28px; gap: 28px; }
@@ -1015,7 +1010,7 @@
     .hero-block { min-height: 260px; }
     .block-content-overlay { padding: 28px 24px; }
     .block-exp-title { font-size: 22px; margin-bottom: 8px; }
-    .block-exp-text { font-size: 12px; margin-bottom: 16px; display: none; }
+    .block-exp-text { font-size: 12px; margin-bottom: 16px; }
     .block-exp-cta { font-size: 9px; }
 
     /* ---- METODO ---- */
