@@ -1020,32 +1020,33 @@
   /* ===== METODO TEASER ===== */
   .metodo-teaser {
     padding: 120px 80px;
-    background: var(--dark);
+    background: var(--offwhite);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
+    border-top: 1px solid var(--light);
   }
   .metodo-teaser-left { display: flex; flex-direction: column; }
   .metodo-teaser-rule { width: 36px; height: 1.5px; background: var(--red); margin-bottom: 32px; }
-  .metodo-teaser .section-tag { color: rgba(255,255,255,0.32); margin-bottom: 28px; }
+  .metodo-teaser .section-tag { color: rgba(78,69,71,0.4); margin-bottom: 28px; }
   .metodo-teaser-title {
     font-family: Aptos, 'Segoe UI', sans-serif;
     font-size: clamp(36px, 4vw, 56px);
     font-weight: 600; line-height: 0.95;
-    letter-spacing: -1.5px; color: var(--white);
+    letter-spacing: -1.5px; color: var(--dark);
     margin-bottom: 32px;
   }
   .metodo-teaser-body {
     font-size: 15px; line-height: 1.85;
-    color: rgba(255,255,255,0.45);
+    color: rgba(78,69,71,0.55);
     margin-bottom: 40px;
   }
   .metodo-teaser-link {
     display: inline-flex; align-items: center; gap: 12px;
     font-family: Aptos, 'Segoe UI', sans-serif;
     font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--white); text-decoration: none; font-weight: 600;
+    color: var(--dark); text-decoration: none; font-weight: 600;
     transition: gap 0.3s, color 0.25s;
   }
   .metodo-teaser-link:hover { gap: 20px; color: var(--red); }
