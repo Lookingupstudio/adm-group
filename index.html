@@ -976,6 +976,89 @@
     .footer-right { text-align: center; }
   }
 
+  /* ===== HERO CTA ===== */
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-top: 44px;
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600;
+    transition: color 0.25s, gap 0.3s;
+    position: relative; z-index: 2;
+    opacity: 0; transform: translateY(12px);
+    transition: opacity 0.7s ease, transform 0.7s ease, color 0.25s, gap 0.3s;
+  }
+  .hero-cta.in { opacity: 1; transform: translateY(0); }
+  .hero-cta:hover { color: var(--white); gap: 20px; }
+  .hero-cta span { font-size: 16px; }
+
+  /* ===== METODO TEASER ===== */
+  .metodo-teaser {
+    padding: 120px 52px;
+    background: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .metodo-teaser .section-tag { color: rgba(255,255,255,0.35); }
+  .metodo-teaser-title {
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 600; line-height: 0.95;
+    letter-spacing: -2px; color: var(--white);
+    margin-bottom: 0;
+  }
+  .metodo-teaser-body {
+    font-size: 15px; line-height: 1.85;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 44px;
+  }
+  .metodo-teaser-link {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--white); text-decoration: none; font-weight: 600;
+    transition: gap 0.3s, color 0.25s;
+  }
+  .metodo-teaser-link:hover { gap: 20px; color: var(--red); }
+  .metodo-teaser-link::after { content: '→'; font-size: 16px; }
+
+  /* ===== CLIENTI ===== */
+  .clienti-section {
+    padding: 80px 52px;
+    background: var(--offwhite);
+  }
+  .clienti-header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+  .clienti-tag {
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+    color: rgba(78,69,71,0.4); font-weight: 600;
+  }
+  .clienti-grid {
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    gap: 48px 72px;
+  }
+  .clienti-logo {
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(78,69,71,0.25); font-weight: 600;
+    transition: color 0.3s;
+    user-select: none;
+  }
+  .clienti-logo:hover { color: rgba(78,69,71,0.6); }
+
+  @media (max-width: 768px) {
+    .metodo-teaser { grid-template-columns: 1fr; gap: 44px; padding: 72px 24px; }
+    .clienti-section { padding: 60px 24px; }
+    .clienti-grid { gap: 32px 48px; }
+    .hero-cta { margin-top: 32px; }
+  }
+
   /* ===================== SMALL PHONES (max 390px) ===================== */
   @media (max-width: 390px) {
     .hero-title { font-size: clamp(38px, 11vw, 52px); }
@@ -1068,6 +1151,7 @@
       <span class="line"><span class="word-wrap"><span class="word-inner red" id="w2" style="transform: translateY(110%);">connessione.</span></span></span>
     </h1>
     <div class="hero-rule" id="heroRule"></div>
+    <a href="#about" class="hero-cta" id="heroCta">Scopri come lavoriamo <span>→</span></a>
   </div>
   <div class="hero-bottom">
     <div class="hero-block hero-block-1 block-stand" id="hb1">
@@ -1080,8 +1164,8 @@
     </div>
     <div class="hero-block hero-block-3 block-red" id="hb3">
       <div class="block-inner" style="flex-direction:column;justify-content:flex-end;padding:44px;align-items:flex-start;">
-        <p>Trasformiamo idee in esperienze memorabili. Stand fieristici, eventi e spazi retail che parlano il linguaggio del tuo brand.</p>
-        <a href="#expertize">Scopri come</a>
+        <p>Progettiamo e costruiamo spazi di connessione. Stand fieristici, eventi e retail che parlano il linguaggio del tuo brand.</p>
+        <a href="#about">Scopri chi siamo</a>
       </div>
     </div>
   </div>
@@ -1105,16 +1189,32 @@
   </div>
 </div>
 
+<!-- CHI SIAMO -->
+<section class="about-strip" id="about">
+  <div class="about-content reveal">
+    <p class="section-tag clip-left">Chi siamo</p>
+    <h2 class="section-title split-reveal"><span class="sr-line"><span class="sr-inner">Creiamo</span></span><span class="sr-line"><span class="sr-inner">architetture effimere.</span></span></h2>
+    <p class="about-text fade-up">Diamo forma a spazi con l'energia giusta per supportare le aziende a entrare in contatto con le persone — curando soluzioni integrate e tailor-made per ogni esigenza.<br><br>ADM Group è una realtà indipendente che fa design degli spazi sfruttando una combinazione originale di competenze ed esperienze: un team multidisciplinare riunito attorno a valori condivisi.<br><br><em>Audacia, collaborazione, qualità d'esecuzione.</em></p>
+    <a href="#" class="metodo-teaser-link" style="color:rgba(255,255,255,0.7);margin-bottom:52px;">Scopri chi siamo</a>
+    <div class="about-stats">
+      <div><div class="stat-num count-up" data-target="15" data-suffix="+">0+</div><div class="stat-label">Anni</div></div>
+      <div><div class="stat-num count-up" data-target="200" data-suffix="+">0+</div><div class="stat-label">Progetti</div></div>
+      <div><div class="stat-num count-up" data-target="80" data-suffix="+">0+</div><div class="stat-label">Clienti</div></div>
+    </div>
+  </div>
+  <div class="about-visual" style="background: url('img/about_team.jpg') center/cover no-repeat;">
+    <div style="position:absolute;inset:0;background:rgba(40,30,35,0.55);"></div>
+    <div class="about-big-text" style="position:relative;z-index:1;">ADM</div>
+    <div class="about-quote" style="z-index:1;">"Creiamo architetture effimere."</div>
+  </div>
+</section>
+
 <!-- EXPERTIZE -->
 <section class="expertize" id="expertize">
-  <div class="section-header reveal">
-    <div><p class="section-tag clip-left">Le nostre expertise</p><h2 class="section-title split-reveal"><span class="sr-line"><span class="sr-inner">Cosa</span></span><span class="sr-line"><span class="sr-inner">sappiamo fare</span></span></h2></div>
-    <p class="section-desc fade-up">Un approccio integrato che unisce progettazione, creatività e tecnologia per creare esperienze che lasciano il segno.</p>
-  </div><div class="draw-line"></div>
   <div class="expertize-grid">
-    <div class="exp-card stagger-item" style="transition-delay: 0s;"><div class="exp-num clip-left">01 — Stand</div><h3 class="exp-title">Stand<br>Fieristici</h3><p class="exp-text fade-up">Progettiamo e realizziamo stand che catturano l'attenzione e raccontano la tua storia in ogni fiera internazionale.</p><a href="#" class="exp-arrow">Approfondisci</a></div>
-    <div class="exp-card stagger-item" style="transition-delay: 0.12s;"><div class="exp-num clip-left">02 — Event</div><h3 class="exp-title">Event<br>Design</h3><p class="exp-text fade-up">Dall'ideazione all'esecuzione, ogni evento diventa un'esperienza unica e memorabile per il tuo pubblico.</p><a href="#" class="exp-arrow">Approfondisci</a></div>
-    <div class="exp-card stagger-item" style="transition-delay: 0.24s;"><div class="exp-num clip-left">03 — Retail</div><h3 class="exp-title">Contract<br>&amp; Retail</h3><p class="exp-text fade-up">Spazi commerciali e retail progettati per connettere brand e consumatori in ambienti che ispirano e convertono.</p><a href="#" class="exp-arrow">Approfondisci</a></div>
+    <div class="exp-card stagger-item" style="transition-delay: 0s;"><div class="exp-num clip-left">01 — Stand</div><h3 class="exp-title">Stand</h3><p class="exp-text fade-up">Creatività, tecnologia e produzione per costruire stand che raccontano storie e si connettono con le persone.</p><a href="#" class="exp-arrow">Scopri Stand</a></div>
+    <div class="exp-card stagger-item" style="transition-delay: 0.12s;"><div class="exp-num clip-left">02 — Event</div><h3 class="exp-title">Event</h3><p class="exp-text fade-up">Dall'ideazione all'esecuzione, ogni evento diventa un'esperienza unica e crea un'emozione nello spazio.</p><a href="#" class="exp-arrow">Scopri Event</a></div>
+    <div class="exp-card stagger-item" style="transition-delay: 0.24s;"><div class="exp-num clip-left">03 — Retail</div><h3 class="exp-title">Contract<br>&amp; Retail</h3><p class="exp-text fade-up">Spazi commerciali e retail progettati per connettere brand e consumatore in ambienti che lasciano il segno.</p><a href="#" class="exp-arrow">Scopri Contract &amp; Retail</a></div>
   </div>
 </section>
 
@@ -1141,24 +1241,34 @@
   <div style="text-align:center;margin-top:60px;" class="reveal"><a href="#" class="btn-red">Vedi tutto il portfolio</a></div>
 </section>
 
-<!-- STEP SECTION (iniettato via JS, placeholder qui per ordine DOM) -->
-<div id="stepPlaceholder"></div>
 
-<section class="about-strip" id="about">
-  <div class="about-content reveal">
-    <p class="section-tag clip-left">Chi siamo</p>
-    <h2 class="section-title split-reveal"><span class="sr-line"><span class="sr-inner">Il metodo</span></span><span class="sr-line"><span class="sr-inner">ADM</span></span></h2>
-    <p class="about-text fade-up">Non siamo una normale agenzia. Siamo progettisti di connessioni, costruttori di esperienze che uniscono brand e persone in spazi fisici che ispirano.</p>
-    <div class="about-stats">
-      <div><div class="stat-num count-up" data-target="15" data-suffix="+">0+</div><div class="stat-label">Anni</div></div>
-      <div><div class="stat-num count-up" data-target="200" data-suffix="+">0+</div><div class="stat-label">Progetti</div></div>
-      <div><div class="stat-num count-up" data-target="80" data-suffix="+">0+</div><div class="stat-label">Clienti</div></div>
-    </div>
+<!-- METODO ADM TEASER -->
+<section class="metodo-teaser" id="metodo">
+  <div class="reveal">
+    <p class="section-tag clip-left">Il nostro metodo</p>
+    <h2 class="metodo-teaser-title split-reveal">
+      <span class="sr-line"><span class="sr-inner">Il metodo</span></span>
+      <span class="sr-line"><span class="sr-inner">ADM.</span></span>
+    </h2>
   </div>
-  <div class="about-visual" style="background: url('img/about_team.jpg') center/cover no-repeat;">
-    <div style="position:absolute;inset:0;background:rgba(40,30,35,0.55);"></div>
-    <div class="about-big-text" style="position:relative;z-index:1;">ADM</div>
-    <div class="about-quote" style="z-index:1;">"Progettiamo e costruiamo spazi di connessione."</div>
+  <div class="reveal">
+    <p class="metodo-teaser-body fade-up">Dal concept alla produzione in-house: un unico ecosistema operativo che controlla ogni fase del progetto. Dalla pianificazione all'esecuzione, su qualsiasi scala e in più aree geografiche.</p>
+    <a href="#" class="metodo-teaser-link">Scopri come lavoriamo</a>
+  </div>
+</section>
+
+<!-- CLIENTI -->
+<section class="clienti-section" id="clienti">
+  <div class="clienti-header reveal">
+    <p class="clienti-tag clip-left">I nostri clienti</p>
+  </div>
+  <div class="clienti-grid reveal">
+    <span class="clienti-logo">Diemmebi</span>
+    <span class="clienti-logo">Jekko</span>
+    <span class="clienti-logo">Nutkao</span>
+    <span class="clienti-logo">Dondi Arreda</span>
+    <span class="clienti-logo">Cosmoprof</span>
+    <span class="clienti-logo">CTL</span>
   </div>
 </section>
 
@@ -1322,6 +1432,7 @@ function revealHero() {
   setTimeout(() => document.getElementById('hb1').classList.add('in'), 500);
   setTimeout(() => document.getElementById('hb2').classList.add('in'), 620);
   setTimeout(() => document.getElementById('hb3').classList.add('in'), 740);
+  setTimeout(() => document.getElementById('heroCta').classList.add('in'), 900);
 }
 
 // ====== HAMBURGER MENU ======
@@ -1435,44 +1546,6 @@ document.querySelectorAll('.blog-card, .exp-card').forEach((el, i) => {
   el.style.transitionDelay = (i % 3) * 0.12 + 's';
 });
 
-// ====== INJECT STEP SECTION ======
-const aboutStrip = document.getElementById('about');
-const stepSection = document.createElement('section');
-stepSection.className = 'step-section';
-stepSection.id = 'metodo';
-stepSection.innerHTML = `
-  <div class="step-intro">
-    <div class="step-intro-tag clip-left">Il nostro processo</div>
-    <h2 class="step-intro-title split-reveal">
-      <span class="sr-line"><span class="sr-inner">Con voi in ogni</span></span>
-      <span class="sr-line"><span class="sr-inner">fase del progetto.</span></span>
-    </h2>
-    <p class="step-intro-text fade-up">Dalla prima chiamata alla consegna finale, ogni passo è pensato per semplificare la collaborazione e garantire risultati che superano le aspettative.</p>
-  </div>
-  <div class="steps-list">
-    <div class="step-item">
-      <div class="step-letter">(a)</div>
-      <div class="step-label">Brief &amp;<br>Strategia<span>Dove nascono le idee</span></div>
-      <div class="step-body">Ascoltiamo e interpretiamo le vostre necessità con cura e attenzione. Il dialogo aperto e la condivisione delle visioni sono il punto di partenza per ogni progetto di successo.</div>
-    </div>
-    <div class="step-item">
-      <div class="step-letter">(b)</div>
-      <div class="step-label">Concept &amp;<br>Design<span>Dove la creatività prende forma</span></div>
-      <div class="step-body">I nostri creativi trasformano la strategia in soluzioni visive distintive. Ogni proposta è dettagliata, originale e costruita intorno all'unicità del vostro brand.</div>
-    </div>
-    <div class="step-item">
-      <div class="step-letter">(c)</div>
-      <div class="step-label">Produzione &amp;<br>Realizzazione<span>Dove lo straordinario è possibile</span></div>
-      <div class="step-body">Artigiani e tecnici esperti concretizzano ogni idea con la massima precisione. Tecnologie avanzate e materiali selezionati garantiscono standard qualitativi elevati.</div>
-    </div>
-    <div class="step-item">
-      <div class="step-letter">(d)</div>
-      <div class="step-label">Lancio &amp;<br>Supporto<span>Dove il progetto diventa realtà</span></div>
-      <div class="step-body">Presenza sul campo, attenzione e disponibilità continua. La nostra esperienza permette di anticipare ogni necessità e gestire ogni dettaglio fino alla fine.</div>
-    </div>
-  </div>
-`;
-aboutStrip.before(stepSection);
 
 // ====== INJECT PARALLAX QUOTE ======
 const contactSection = document.getElementById('contatti');
