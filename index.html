@@ -1051,10 +1051,31 @@
   }
   .metodo-teaser-link:hover { gap: 20px; color: var(--red); }
   .metodo-teaser-link::after { content: '→'; font-size: 16px; }
-  .metodo-img-wrap { overflow: hidden; border-radius: 2px; }
-  .metodo-img-wrap img { width: 100%; height: 420px; object-fit: cover; display: block;
-    transition: transform 0.8s cubic-bezier(0.23,1,0.32,1); }
-  .metodo-img-wrap:hover img { transform: scale(1.04); }
+  .metodo-red-block {
+    background: var(--red);
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 52px;
+    min-height: 380px;
+  }
+  .metodo-red-quote {
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 600; line-height: 1.05;
+    letter-spacing: -1.5px; color: var(--white);
+  }
+  .metodo-red-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.25); padding-top: 28px; margin-top: 48px;
+  }
+  .metodo-red-label {
+    font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); font-weight: 600;
+    font-family: Aptos, 'Segoe UI', sans-serif;
+  }
+  .metodo-red-arrow {
+    font-size: 22px; color: var(--white); opacity: 0.7;
+  }
 
   /* ===== CLIENTI ===== */
   .clienti-section {
@@ -1097,8 +1118,8 @@
   .clienti-logo-img:hover { filter: opacity(1); }
 
   @media (max-width: 768px) {
-    .metodo-teaser { grid-template-columns: 1fr; gap: 40px; padding: 72px 24px; }
-    .metodo-img-wrap img { height: 300px; }
+    .metodo-teaser { grid-template-columns: 1fr; gap: 0; padding: 72px 24px; }
+    .metodo-red-block { padding: 44px 28px; min-height: 280px; }
     .clienti-section { padding: 60px 24px; }
     .clienti-grid { gap: 32px 48px; }
     .hero-cta { margin-top: 32px; }
@@ -1306,8 +1327,12 @@
     <p class="metodo-teaser-body fade-up">Dal concept alla produzione in-house: un unico ecosistema operativo che controlla ogni fase del progetto. Dalla pianificazione all'esecuzione, su qualsiasi scala e in più aree geografiche.</p>
     <a href="#" class="metodo-teaser-link">Scopri come lavoriamo</a>
   </div>
-  <div class="metodo-img-wrap reveal">
-    <img src="img/metodo_quinto.jpg" alt="ADM Group — ufficio Quinto di Treviso">
+  <div class="metodo-red-block reveal">
+    <p class="metodo-red-quote">Dal concept alla produzione,<br>tutto in-house.</p>
+    <div class="metodo-red-footer">
+      <span class="metodo-red-label">ADM Group</span>
+      <span class="metodo-red-arrow">→</span>
+    </div>
   </div>
 </section>
 
