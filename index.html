@@ -434,17 +434,43 @@
   .port-event { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 8px; }
 
   /* ABOUT */
-  .about-strip { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
-  .about-content { background: var(--dark); padding: 100px 64px; display: flex; flex-direction: column; justify-content: center; }
-  .about-content .section-tag { color: rgba(255,255,255,0.35); }
-  .about-content .section-title { color: var(--white); margin-bottom: 32px; }
-  .about-text { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.45); margin-bottom: 52px; max-width: 480px; }
-  .about-stats { display: flex; gap: 52px; }
+  .about-strip {
+    padding: 140px 80px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+    border-top: 1px solid var(--light);
+  }
+  .about-content {}
+  .about-content .section-tag { color: var(--red); }
+  .about-title {
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 600; line-height: 0.95;
+    letter-spacing: -2px; color: var(--dark);
+    margin-top: 24px;
+  }
+  .about-right { padding-top: 8px; }
+  .about-text {
+    font-size: 16px; line-height: 1.9;
+    color: rgba(78,69,71,0.6);
+    margin-bottom: 48px;
+  }
+  .about-text em { font-style: normal; color: var(--dark); font-weight: 400; }
+  .about-cta {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: Aptos, 'Segoe UI', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--dark); text-decoration: none; font-weight: 600;
+    transition: gap 0.3s, color 0.25s;
+  }
+  .about-cta::after { content: '→'; font-size: 16px; }
+  .about-cta:hover { gap: 20px; color: var(--red); }
+  .about-stats { display: flex; gap: 52px; margin-top: 72px; padding-top: 44px; border-top: 1px solid var(--light); }
   .stat-num { font-size: 52px; font-weight: 600; color: var(--red); line-height: 1; letter-spacing: -1px; font-family: Aptos, 'Segoe UI', sans-serif; }
-  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-top: 8px; font-weight: 600; }
-  .about-visual { background: var(--red); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-  .about-big-text { font-family: Aptos, 'Segoe UI', sans-serif; font-size: 130px; font-weight: 600; color: rgba(255,255,255,0.07); letter-spacing: -6px; text-align: center; padding: 40px; user-select: none; }
-  .about-quote { position: absolute; bottom: 52px; left: 52px; right: 52px; font-size: 20px; line-height: 1.5; color: var(--white); font-family: Aptos, 'Segoe UI', sans-serif; font-weight: 600; letter-spacing: -0.3px; }
+  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(78,69,71,0.4); margin-top: 8px; font-weight: 600; }
 
   /* BLOG */
   .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 70px; }
@@ -921,13 +947,10 @@
     .step-letter { padding-top: 0; }
 
     /* ---- ABOUT ---- */
-    .about-strip { grid-template-columns: 1fr; }
-    .about-content { padding: 64px 24px; }
-    .about-text { font-size: 14px; margin-bottom: 40px; }
-    .about-visual { min-height: 280px; }
-    .about-big-text { font-size: 80px; letter-spacing: -4px; }
-    .about-quote { font-size: 16px; left: 24px; right: 24px; bottom: 28px; line-height: 1.45; }
-    .about-stats { gap: 28px; flex-wrap: wrap; }
+    .about-strip { grid-template-columns: 1fr; gap: 44px; padding: 80px 24px; }
+    .about-title { font-size: clamp(38px, 10vw, 56px); }
+    .about-text { font-size: 15px; margin-bottom: 36px; }
+    .about-stats { gap: 28px; flex-wrap: wrap; margin-top: 44px; }
     .stat-num { font-size: 44px; }
     .stat-label { font-size: 9px; }
 
@@ -1206,19 +1229,20 @@
 <section class="about-strip" id="about">
   <div class="about-content reveal">
     <p class="section-tag clip-left">Chi siamo</p>
-    <h2 class="section-title split-reveal"><span class="sr-line"><span class="sr-inner">Creiamo</span></span><span class="sr-line"><span class="sr-inner">architetture effimere.</span></span></h2>
-    <p class="about-text fade-up">Diamo forma a spazi con l'energia giusta per supportare le aziende a entrare in contatto con le persone — curando soluzioni integrate e tailor-made per ogni esigenza.<br><br>ADM Group è una realtà indipendente che fa design degli spazi sfruttando una combinazione originale di competenze ed esperienze: un team multidisciplinare riunito attorno a valori condivisi.<br><br><em>Audacia, collaborazione, qualità d'esecuzione.</em></p>
-    <a href="#" class="metodo-teaser-link" style="color:rgba(255,255,255,0.7);margin-bottom:52px;">Scopri chi siamo</a>
-    <div class="about-stats">
-      <div><div class="stat-num">15+</div><div class="stat-label">Anni</div></div>
-      <div><div class="stat-num">200+</div><div class="stat-label">Progetti</div></div>
-      <div><div class="stat-num">80+</div><div class="stat-label">Clienti</div></div>
-    </div>
+    <h2 class="about-title split-reveal">
+      <span class="sr-line"><span class="sr-inner">Creiamo</span></span>
+      <span class="sr-line"><span class="sr-inner">architetture</span></span>
+      <span class="sr-line"><span class="sr-inner">effimere.</span></span>
+    </h2>
   </div>
-  <div class="about-visual" style="background: url('img/about_ufficio.jpg') center/cover no-repeat;">
-    <div style="position:absolute;inset:0;background:rgba(40,30,35,0.55);"></div>
-    <div class="about-big-text" style="position:relative;z-index:1;">ADM</div>
-    <div class="about-quote" style="z-index:1;">"Creiamo architetture effimere."</div>
+  <div class="about-right reveal">
+    <p class="about-text fade-up">Diamo forma a spazi con l'energia giusta per supportare le aziende a entrare in contatto con le persone — curando soluzioni integrate e tailor-made per ogni esigenza.<br><br>ADM Group è una realtà indipendente che fa design degli spazi sfruttando una combinazione originale di competenze ed esperienze: un team multidisciplinare riunito attorno a valori condivisi.<br><br><em>Audacia, collaborazione, qualità d'esecuzione.</em></p>
+    <a href="#" class="about-cta">Scopri chi siamo</a>
+    <div class="about-stats">
+      <div><div class="stat-num count-up">15+</div><div class="stat-label">Anni</div></div>
+      <div><div class="stat-num count-up">200+</div><div class="stat-label">Progetti</div></div>
+      <div><div class="stat-num count-up">80+</div><div class="stat-label">Clienti</div></div>
+    </div>
   </div>
 </section>
 
