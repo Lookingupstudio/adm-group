@@ -1019,25 +1019,32 @@
 
   /* ===== METODO TEASER ===== */
   .metodo-teaser {
-    padding: 120px 52px;
     background: var(--dark);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
+    gap: 0;
+    min-height: 88vh;
+    align-items: stretch;
   }
-  .metodo-teaser .section-tag { color: rgba(255,255,255,0.35); }
+  .metodo-teaser-left {
+    padding: 110px 80px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .metodo-teaser-rule {
+    width: 44px; height: 1.5px; background: var(--red); margin-bottom: 36px;
+  }
+  .metodo-teaser .section-tag { color: rgba(255,255,255,0.32); margin-bottom: 40px; }
   .metodo-teaser-title {
     font-family: Aptos, 'Segoe UI', sans-serif;
-    font-size: clamp(40px, 5.5vw, 72px);
-    font-weight: 600; line-height: 0.95;
-    letter-spacing: -2px; color: var(--white);
-    margin-bottom: 0;
+    font-size: clamp(48px, 6vw, 86px);
+    font-weight: 600; line-height: 0.92;
+    letter-spacing: -3px; color: var(--white);
+    margin-bottom: 44px;
   }
   .metodo-teaser-body {
-    font-size: 15px; line-height: 1.85;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 44px;
+    font-size: 15px; line-height: 1.9;
+    color: rgba(255,255,255,0.48);
+    margin-bottom: 52px; max-width: 420px;
   }
   .metodo-teaser-link {
     display: inline-flex; align-items: center; gap: 12px;
@@ -1048,9 +1055,9 @@
   }
   .metodo-teaser-link:hover { gap: 20px; color: var(--red); }
   .metodo-teaser-link::after { content: '→'; font-size: 16px; }
-  .metodo-img-wrap { overflow: hidden; height: 100%; min-height: 480px; }
+  .metodo-img-wrap { overflow: hidden; position: relative; }
   .metodo-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block;
-    transition: transform 0.8s cubic-bezier(0.23,1,0.32,1); }
+    transition: transform 1s cubic-bezier(0.23,1,0.32,1); }
   .metodo-img-wrap:hover img { transform: scale(1.04); }
 
   /* ===== CLIENTI ===== */
@@ -1094,7 +1101,9 @@
   .clienti-logo-img:hover { filter: opacity(1); }
 
   @media (max-width: 768px) {
-    .metodo-teaser { grid-template-columns: 1fr; gap: 44px; padding: 72px 24px; }
+    .metodo-teaser { grid-template-columns: 1fr; min-height: auto; }
+    .metodo-teaser-left { padding: 72px 24px; }
+    .metodo-img-wrap { min-height: 360px; }
     .clienti-section { padding: 60px 24px; }
     .clienti-grid { gap: 32px 48px; }
     .hero-cta { margin-top: 32px; }
@@ -1316,7 +1325,8 @@
 
 <!-- METODO ADM TEASER -->
 <section class="metodo-teaser" id="metodo">
-  <div class="reveal">
+  <div class="metodo-teaser-left reveal">
+    <div class="metodo-teaser-rule"></div>
     <p class="section-tag clip-left">Il nostro metodo</p>
     <h2 class="metodo-teaser-title split-reveal">
       <span class="sr-line"><span class="sr-inner">Il metodo</span></span>
